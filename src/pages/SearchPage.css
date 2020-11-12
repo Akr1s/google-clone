@@ -92,3 +92,32 @@
   width: 20px;
   margin-right: 10px;
 }
+@media screen and (max-width: 1040px) {
+  .searchPage__results {
+    margin: 0 auto;
+    width: 90%;
+  }
+  .searchPage__header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .searchPage__logo {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 900px) {
+  .searchPage__headerBody {
+    width: 90%;
+  }
+  .searchPage__options {
+    flex-direction: column;
+  }
+  .searchPage__optionsRight {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .searchPage__options {
+    display: none;
+  }
+}
