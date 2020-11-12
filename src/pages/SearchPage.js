@@ -15,7 +15,6 @@ function SearchPage() {
   const [{ term }] = useStateValue();
   // const { data } = useGoogleSearch(term);
   const data = Response;
-  console.log(data);
   return (
     <div className="searchPage">
       <div className="searchPage__header">
@@ -73,8 +72,8 @@ function SearchPage() {
             About {data?.searchInformation.formattedTotalResults} results ({" "}
             {data?.searchInformation.formattedSearchTime}) for {term}
           </p>
-          {data?.items.map((item) => (
-            <div className="searchPage__result">
+          {data?.items.map((item, index) => (
+            <div key={index} className="searchPage__result">
               <a className="searchPage__resultLink" href={item.link}>
                 {item.pagemap?.cse_image?.length > 0 &&
                   item.pagemap?.cse_image[0]?.src && (

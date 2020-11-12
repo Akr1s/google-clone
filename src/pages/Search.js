@@ -12,9 +12,19 @@ function Search({ hideButtons = false }) {
   const history = useHistory();
   const search = (e) => {
     e.preventDefault();
+    if (input) {
+      dispatch({
+        type: actionTypes.SET_SEARCH_TERM,
+        term: input,
+      });
+      history.push("/search");
+    }
+  };
+  const searchRandom = (e) => {
+    e.preventDefault();
     dispatch({
       type: actionTypes.SET_SEARCH_TERM,
-      term: input,
+      term: "You are lucky!",
     });
     history.push("/search");
   };
@@ -31,7 +41,9 @@ function Search({ hideButtons = false }) {
           <Button type="submit" onClick={search} variant="outlined">
             Google Search
           </Button>
-          <Button variant="outlined">I'm Feeling Lucky</Button>
+          <Button variant="outlined" onClick={searchRandom}>
+            I'm Feeling Lucky
+          </Button>
         </div>
       ) : (
         <div className="search__buttonsHidden">
