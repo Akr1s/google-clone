@@ -12,7 +12,7 @@
 }
 
 .search__input > input {
-  flex: 1;
+  flex: 1 1 100px;
   padding: 20px 20px;
   font-size: medium;
   border: none;
@@ -50,4 +50,9 @@
 
 .search__buttonsHidden {
   display: none !important;
+}
+@media screen and (max-width: 400px) {
+  .search__input {
+    width: 80%;
+  }
 }
